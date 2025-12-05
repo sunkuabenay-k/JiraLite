@@ -1,0 +1,285 @@
+/* src/pages/issues/components/IssueDetailModal.css */
+
+/* Overlay */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(9, 30, 66, 0.55);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+/* Modal card */
+.modal-content {
+  background: var(--app-surface, #ffffff);
+  width: 92%;
+  max-width: 860px;
+  max-height: 90vh;
+  overflow-y: auto;
+  border-radius: 8px;
+  padding: 24px 28px 28px;
+  position: relative;
+  box-shadow: 0 12px 32px rgba(9, 30, 66, 0.45);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+/* Close button */
+.close-btn {
+  position: absolute;
+  top: 14px;
+  right: 18px;
+  font-size: 1.5rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #6b778c;
+}
+
+.close-btn:hover {
+  color: #172b4d;
+}
+
+/* Header */
+.modal-header {
+  border-bottom: 1px solid var(--app-border, #dfe1e6);
+  padding-bottom: 12px;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.modal-header h2 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #172b4d;
+}
+
+.edit-title-input {
+  font-size: 1.35rem;
+  font-weight: 600;
+  width: 70%;
+  padding: 6px 8px;
+  border-radius: 4px;
+  border: 1px solid var(--app-border, #dfe1e6);
+  outline: none;
+}
+
+.edit-title-input:focus {
+  border-color: #4c9aff;
+  box-shadow: 0 0 0 2px rgba(76, 154, 255, 0.2);
+}
+
+/* Info grid */
+.modal-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 16px;
+  margin-bottom: 20px;
+  background: #f4f5f7;
+  padding: 14px 16px;
+  border-radius: 6px;
+}
+
+.detail-item label {
+  font-weight: 600;
+  display: block;
+  font-size: 0.8rem;
+  color: #5e6c84;
+  margin-bottom: 4px;
+}
+
+.detail-item span,
+.detail-item select {
+  font-size: 0.9rem;
+  color: #172b4d;
+}
+
+.detail-item select {
+  width: 100%;
+  padding: 6px 8px;
+  border-radius: 4px;
+  border: 1px solid var(--app-border, #dfe1e6);
+}
+
+/* Description */
+.description-box {
+  background: #ffffff;
+  border: 1px solid var(--app-border, #dfe1e6);
+  padding: 12px 14px;
+  border-radius: 4px;
+  min-height: 70px;
+  font-size: 0.95rem;
+  color: #172b4d;
+}
+
+/* Sections */
+.modal-section {
+  margin-top: 22px;
+}
+
+.modal-section h3 {
+  margin-bottom: 8px;
+  font-size: 1rem;
+  color: #172b4d;
+}
+
+/* BADGES – shared styling */
+.status-badge,
+.priority-tag,
+.severity-tag {
+  padding: 4px 10px;
+  border-radius: 3px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Status */
+.status-open,
+.status-OPEN {
+  background: #e3fcef;
+  color: #006644;
+}
+
+.status-in_progress,
+.status-IN_PROGRESS {
+  background: #deebff;
+  color: #0747a6;
+}
+
+.status-review,
+.status-REVIEW {
+  background: #fff0b3;
+  color: #8a6d1d;
+}
+
+.status-closed,
+.status-CLOSED {
+  background: #ffebe6;
+  color: #bf2600;
+}
+
+/* Priority */
+.priority-tag {
+  background: #ebecf0;
+  color: #172b4d;
+}
+
+/* Severity */
+.severity-tag {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+/* COMMENTS */
+.comments-list {
+  margin-top: 12px;
+  max-height: 260px;
+  overflow-y: auto;
+}
+
+.comment-item {
+  border-bottom: 1px solid #ebecf0;
+  padding: 10px 0;
+}
+
+.comment-header {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.82rem;
+  margin-bottom: 4px;
+  color: #6b778c;
+}
+
+.comment-date {
+  margin-left: 8px;
+  font-size: 0.78rem;
+  color: #a5adba;
+}
+
+.delete-comment-btn {
+  color: #de350b;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 0.78rem;
+}
+
+.delete-comment-btn:hover {
+  text-decoration: underline;
+}
+
+/* Comment form */
+.comment-form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-top: 12px;
+  border: 1px solid var(--app-border, #dfe1e6);
+  border-radius: 4px;
+  resize: vertical;
+  min-height: 60px;
+  box-sizing: border-box;
+  font-size: 0.9rem;
+}
+
+.comment-form textarea:focus {
+  border-color: #4c9aff;
+  box-shadow: 0 0 0 2px rgba(76, 154, 255, 0.2);
+}
+
+/* BUTTONS */
+.btn-sm {
+  font-size: 0.85rem;
+  padding: 6px 11px;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-edit {
+  background: var(--app-primary, #0052cc);
+  color: #ffffff;
+}
+
+.btn-save {
+  background: #36b37e;
+  color: #ffffff;
+  margin-right: 8px;
+}
+
+.btn-cancel {
+  background: #f4f5f7;
+  color: #172b4d;
+}
+
+.btn-primary {
+  margin-top: 10px;
+  background: var(--app-primary, #0052cc);
+  color: #ffffff;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.btn-primary:hover,
+.btn-edit:hover,
+.btn-save:hover {
+  opacity: 0.92;
+}
+
+.edit-actions {
+  display: flex;
+  gap: 8px;
+}
+
+/* Misc */
+.no-data {
+  font-size: 0.9rem;
+  color: #6b778c;
+}

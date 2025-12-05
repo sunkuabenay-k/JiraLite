@@ -1,0 +1,134 @@
+/* Center entire Create Issue layout */
+.issue-form-container {
+    max-width: 700px;
+    margin: 40px auto;
+    padding: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Page title */
+.issue-form-title {
+    text-align: center;
+    font-size: 2rem;
+    color: #172b4d;
+    font-weight: 600;
+    margin-bottom: 30px;
+}
+
+/* Error alert box */
+.issue-form-error {
+    background: #ffebe6;
+    color: #bf2600;
+    border: 1px solid #ffbdad;
+    padding: 12px;
+    border-radius: 4px;
+    margin-bottom: 20px;
+    text-align: center;
+    font-weight: 500;
+}
+
+/* Form card */
+.issue-form-card {
+    background: white;
+    padding: 30px;
+    border-radius: 8px;
+    border: 1px solid #dfe1e6;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+}
+
+/* Labels */
+.issue-form-label {
+    display: block;
+    font-weight: 600;
+    color: #42526e;
+    margin-bottom: 6px;
+    font-size: 0.9rem;
+}
+
+/* Inputs, textareas, selects */
+.issue-form-input,
+.issue-form-textarea,
+.issue-form-select {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid #dfe1e6;
+    border-radius: 4px;
+    font-size: 0.95rem;
+    margin-bottom: 20px;
+    transition: border-color 0.2s;
+    box-sizing: border-box; /* Crucial for padding */
+    background-color: #fafbfc;
+}
+
+.issue-form-input:focus,
+.issue-form-textarea:focus,
+.issue-form-select:focus {
+    border-color: #4c9aff;
+    background-color: white;
+    outline: none;
+}
+
+.issue-form-textarea {
+    resize: vertical;
+}
+
+/* DYNAMIC ROW LAYOUT 
+   This handles 3 items (Create mode) or 4 items (Edit mode with Status)
+   automatically using CSS Grid.
+*/
+.issue-form-row-3 {
+    display: grid;
+    /* Creates columns with a min-width of 120px, filling space equally */
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 20px;
+    margin-bottom: 10px;
+}
+
+/* Buttons Container */
+.issue-form-buttons {
+    display: flex;
+    gap: 15px;
+    margin-top: 10px;
+    justify-content: flex-end; /* Align buttons to right */
+}
+
+/* Orange Create/Save button */
+.issue-form-create-btn {
+    background: #0052cc;
+    border: none;
+    padding: 10px 24px;
+    color: white;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.issue-form-create-btn:hover {
+    background: #0047b3;
+}
+
+/* Cancel button */
+.issue-form-cancel-btn {
+    padding: 10px 24px;
+    background: transparent;
+    border: none;
+    color: #42526e;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.issue-form-cancel-btn:hover {
+    color: #172b4d;
+    text-decoration: underline;
+}
+
+/* Loading Spinner */
+.loading-spinner {
+    text-align: center;
+    margin-top: 50px;
+    font-size: 1.2rem;
+    color: #0052cc;
+}
